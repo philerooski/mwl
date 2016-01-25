@@ -6,7 +6,7 @@ The theme of the competition was "trees", and so I had experimented with various
 
 There were two parts to my grid search process:
 
-1. An all-encompassing grid search. This was meant to let me choose the "general" hyperparameters of my model. I defined a general hyperparameter to be any parameter that was not ```n_estimator``` (the number of trees, more on this in second item below). As a scoring metric, I used the area under an ROC curve (AUC) because I was not yet concerned with obtaining the best possible accuracy, I was only interested in obtaining a classifier (with some given set of general hyperparameters) that was most likely to perform well on holdout data. The optimal model had an AUC score of 0.784±0.015 and the following parameters:
+1. An all-encompassing grid search. This was meant to let me choose the "general" hyperparameters of my model. I defined a general hyperparameter to be any parameter that was not ```n_estimators``` (the number of trees, more on this in second item below). As a scoring metric, I used the area under an ROC curve (AUC) because I was not yet concerned with obtaining the best possible accuracy, I was only interested in obtaining a classifier (with some given set of general hyperparameters) that was most likely to perform well on holdout data. The optimal model had an AUC score of 0.784±0.015 and the following parameters:
 ```
     {'learning_rate': 0.02,
      'loss': 'exponential',
@@ -15,9 +15,9 @@ There were two parts to my grid search process:
      'n_estimators': 400,
      'subsample': 0.7}
 ```
-But, ultimately, I decided to use a ```max_depth``` of 5 since it gave me a less complex model and an AUC score (0.782±0.014) within a standard error of the above parameter set.
+But, ultimately, I decided to use a ```max_depth``` of 5 since it gave me a less complex model and an AUC score (0.782±0.014) well within a standard error of the above parameter set.
 
-2. An ```n_estimator```s grid search. The number of trees was the most important variable in whether my model overfit the training data, and so I did a separate grid search to fine tune the ```n_estimators``` parameter (fixing the general parameters) and used accuracy as my scoring metric since I was to select my final classifier from the results of this second grid search. This gave me a model with an accuracy of 0.7074±0.0098 and the following parameter set: 
+2. An ```n_estimators``` grid search. The number of trees was the most important variable in whether my model overfit the training data, and so I did a separate grid search to fine tune the ```n_estimators``` parameter (fixing the general parameters) and used accuracy as my scoring metric since I was to select my final classifier from the results of this second grid search. This gave me a model with an accuracy of 0.7074±0.0098 and the following parameter set: 
 ```
     {'learning_rate': 0.02,
      'loss': 'exponential',
