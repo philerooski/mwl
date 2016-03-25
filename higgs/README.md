@@ -30,4 +30,4 @@ As you can see from the below plot, a second grid search was probably unnecessar
 
 ![OOB improvement](https://github.com/philerooski/mwl/blob/master/higgs/oob.png)
 
-After choosing my final model, I predicted upon ```unlabeledTestSet.csv``` - which was to determine the final rankings of competitors - obtaining an accuracy of 0.7065, 0.0003 behind the [1st place winner](https://github.com/nelson-liu/ML-competitions/tree/master/MWL/Higgs).
+After choosing my final model, I predicted upon ```unlabeledTestSet.csv``` - which was to determine the final rankings of competitors - obtaining an accuracy of 0.7065, 0.0003 behind the [1st place winner](https://github.com/nelson-liu/ML-competitions/tree/master/MWL/01%20Higgs).
